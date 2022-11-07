@@ -7,7 +7,7 @@
 .metadata
 *.iml
 *.ipr
-/out
+/out/
 
 # Compiled source #
 ###################
