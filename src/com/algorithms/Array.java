@@ -1,6 +1,16 @@
 package com.algorithms;
 
 public class Array {
+    public static void main(String[] args) {
+        Array numbers = new Array(3);
+        numbers.insert(10);
+        numbers.insert(20);
+        numbers.insert(30);
+        numbers.insert(40);
+        numbers.indexOf(40);
+        numbers.updateAt(3, 50);
+        numbers.indexOf(40);
+    }
     private int[] items;
     private int count;
     private int num;
@@ -60,9 +70,9 @@ public class Array {
         // O(1) Best case
         // O(n) Worst case
         for (int i = 0; i < count; i++) {
-            if (items[i] == item)
+            if (items[i] == item) 
                 // return i;
-                System.out.println("index location = " + i);
+                System.out.println("The index is " + i + " for item: " + item);
         }
         return -1;
     }
