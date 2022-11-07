@@ -10,6 +10,8 @@ public class Array {
         numbers.indexOf(40);
         numbers.updateAt(3, 50);
         numbers.indexOf(40);
+        numbers.print();
+        System.out.println(numbers.max());
     }
     private int[] items;
     private int count;
@@ -70,7 +72,7 @@ public class Array {
         // O(1) Best case
         // O(n) Worst case
         for (int i = 0; i < count; i++) {
-            if (items[i] == item) 
+            if (items[i] == item)
                 // return i;
                 System.out.println("The index is " + i + " for item: " + item);
         }
@@ -81,4 +83,17 @@ public class Array {
         for (int i = 0; i < count; ++i)
             System.out.println(items[i]);
     }
+
+    public int max() {
+        int i;
+        int max = items[0];
+
+        for (i = 0; i < items.length; ++i) {
+            if (items[i] > max)
+                max = items[i];
+        }
+        return max;
+    }
+
 }
+
