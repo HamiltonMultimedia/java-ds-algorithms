@@ -15,13 +15,18 @@ public class Array {
     }
     private int[] items;
     private int count;
-    private int num;
 
     public Array(int length) {
         items = new int [length];
     }
 
     public void insert(int item) {
+        resizeIfRequired();
+        // Add the new item at the end
+        items[count++] = item;
+    }
+
+    private void resizeIfRequired() {
         // If the array is full, resize it
         if (items.length == count) {
             // Create a new array (twice the size)
@@ -34,9 +39,8 @@ public class Array {
             // Set "items" to this new array
             items = newItems;
         }
-        // Add the new item at the end
-        items[count++] = item;
     }
+
 
     public void updateAt(int index, int num) {
         // Function takes 2 int arguments
