@@ -89,13 +89,22 @@ public class Array {
     }
 
     public int max() {
-        int i;
-        int max = items[0];
-
-        for (i = 0; i < items.length; ++i) {
-            if (items[i] > max)
-                max = items[i];
-        }
+        // O(n): Because we have to iterate over
+        // the entire array to find the largest
+        // number. This number ma be at the end
+        // of the array (worst case scenario).
+        // My logic commented:
+        //        int i;
+        //        int max = items[0];
+        //
+        //        for (i = 0; i < items.length; ++i) {
+        //            if (items[i] > max)
+        //                max = items[i];
+        //        }
+        int max = 0;
+        for (int item : items)
+            if (item > max)
+                max = item;
         return max;
     }
 
