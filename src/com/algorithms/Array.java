@@ -54,6 +54,16 @@ public class Array {
         System.out.println("With a value of " + num);
     }
 
+    public Array intersect(Array other) {
+        var intersection = new Array(count);
+
+        for (int item : items)
+            if (other.indexOf(item) >= count)
+                intersection.insert(item);
+
+        return intersection;
+    }
+
     public void removeAt(int index) {
         // Validate the index
         if (index < 0 || index >= count)
