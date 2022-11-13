@@ -41,6 +41,14 @@ public class Array {
         }
     }
 
+    public void reverse() {
+        int[] newItems = new int[count];
+
+        for (int i = 0; i < count; i++)
+            newItems[i] = items[count - i - 1];
+
+        items = newItems;
+    }
 
     public void updateAt(int index, int num) {
         // Function takes 2 int arguments
