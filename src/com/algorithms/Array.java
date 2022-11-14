@@ -26,6 +26,26 @@ public class Array {
         items[count++] = item;
     }
 
+    public void insertAt(int item, int index) {
+        if (index < 0 || index > count)
+            throw new IllegalArgumentException();
+
+        // Here Mosh extracted the logic for
+        // resizing the array into this private
+        // method, so we can reuse in insert() and
+        // insertAt() methods.
+        //
+        // This made the code cleaner and
+        // more readable.
+        resizeIfRequired();
+
+        for (int i = count - 1; i >= index; i--)
+            items[i + 1] = items[i];
+
+        items[index] = item;
+        count++;
+    }
+
     private void resizeIfRequired() {
         // If the array is full, resize it
         if (items.length == count) {
