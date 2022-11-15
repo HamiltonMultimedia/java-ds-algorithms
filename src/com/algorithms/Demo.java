@@ -10,4 +10,14 @@ public class Demo {
 
         items = new int[length];
     }
+
+    public void insert(int item) {
+        if (count == items.length) {
+            int[] newItems = new int[items.length * 2];
+            for (int i = 0; i < count; i++)
+                newItems[i] = items[i];
+            items = newItems;
+        }
+        items[count++] = item;
+    }
 }
